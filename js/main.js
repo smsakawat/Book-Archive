@@ -1,6 +1,6 @@
-// get search value and request server
+// Add Event handler 
 document.getElementById('search-btn').addEventListener('click', function () {
-    // change styles
+    // change css styles
     document.getElementById('body-part').style.background = 'rgba(255,255,255,0.5)';
     document.getElementById('title').classList.add('text-dark');
     document.getElementById('horizontal-line').classList.add('text-dark');
@@ -42,25 +42,29 @@ const showBooks = (data) => {
     }
     // show data
     else {
-        const booksDetails = data.docs;
-        document.getElementById('amounts').innerText = `${booksDetails.length} results found`;
+        const booksDocuments = data.docs;
+        document.getElementById('amounts').innerText = `${booksDocuments.length} results found`;
         const booksDiv = document.getElementById('book-container');
-        booksDetails.forEach(element => {
+        booksDocuments.forEach(element => {
+            // imglink
+            const imgSrc = `https://covers.openlibrary.org/b/id/${element.cover_i}-M.jpg`;
+            // empty image
+            const emptyThumbnail = 'images/index.jpg';
             // create div and append  in container
             const div = document.createElement('div');
             div.classList.add('col');
             div.innerHTML = `<div class="card h-100 border-0 shadow-lg p-2">
         <div class="rounded-3">
-            <img src="https://covers.openlibrary.org/b/id/${element.cover_i}-M.jpg" class="card-img-top" alt="images/blank.png">
+            <img  src="${element.cover_i ? imgSrc : emptyThumbnail}" class="card-img-top" alt="images/blank.png">
         </div>
         <div class="card-body my-0 pb-2">
             <h3 class="card-title mb-3 fw-bold">${element.title}</h3>
 
-            <h4 class="mb-2 lead">Author: ${element.author_name ? element.author_name[0] : 'unknown'}</h4>
+            <h4 class="mb-2 lead">Author: ${element.author_name ? element.author_name[0] : 'Unknown'}</h4>
             
-            <p class="mb-1">Published By: ${element.publisher ? element.publisher[0] : 'unknown'}</p>
+            <p class="mb-1">Published By: ${element.publisher ? element.publisher[0] : 'Unknown'}</p>
 
-            <p>First Published: ${element.publish_date ? element.publish_date[0] : 'unknown'}</p>    
+            <p>First Published: ${element.publish_date ? element.publish_date[0] : 'Unknown'}</p>    
         </div>
         </div>`;
             booksDiv.appendChild(div);
