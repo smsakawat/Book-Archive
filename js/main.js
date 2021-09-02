@@ -1,7 +1,7 @@
 // get search value and request server
 document.getElementById('search-btn').addEventListener('click', function () {
     // change styles
-    document.getElementById('body-part').style.background = '#dcdcdc';
+    document.getElementById('body-part').style.background = 'rgba(255,255,255,0.5)';
     document.getElementById('title').classList.add('text-dark');
     document.getElementById('horizontal-line').classList.add('text-dark');
     // clean UI
