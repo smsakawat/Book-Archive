@@ -42,6 +42,7 @@ const showBooks = (data) => {
         const booksDiv = document.getElementById('book-container');
 
         booksArray.forEach(element => {
+            console.log(element)
 
             const div = document.createElement('div');
             div.classList.add('col');
@@ -52,11 +53,11 @@ const showBooks = (data) => {
         <div class="card-body my-0 pb-2">
             <h3 class="card-title mb-3 fw-bold">${element.title}</h3>
 
-            <h4 class="mb-2 lead">Author: ${element.author_name ? element.author_name : 'unknown'}</h4>
+            <h4 class="mb-2 lead">Author: ${element.author_name ? element.author_name[0] : 'unknown'}</h4>
             
             <p class="mb-1">Published By: ${element.publisher ? element.publisher[0] : 'unknown'}</p>
 
-            <p>First Published: ${element.publish_date ? element.publish_date[0] : element.publish_year}</p>    
+            <p>First Published: ${element.publish_date ? element.publish_date[0] : 'unknown'}</p>    
         </div>
         </div>`;
             booksDiv.appendChild(div);
