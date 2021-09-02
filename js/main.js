@@ -1,10 +1,11 @@
 // get search value and call api
+
 document.getElementById('search-btn').addEventListener('click', function () {
-    // clean Ui
+    // clean UI
     document.getElementById('book-container').innerHTML = '';
     document.getElementById('amounts').innerHTML = '';
     document.getElementById('page-error').innerText = '';
-    //  get search value
+    //  get search Text
     const searchText = document.getElementById('input-field').value;
     const error = document.getElementById('input-error');
     if (searchText === '') {
@@ -28,7 +29,6 @@ const loadData = (searchText) => {
 }
 // display books
 const showBooks = (data) => {
-    console.log(data)
     // turn of spinner
     document.getElementById('spinner').classList.add('d-none');
     // error handle
@@ -38,22 +38,21 @@ const showBooks = (data) => {
     // display data
     else {
         const booksArray = data.docs;
-
         document.getElementById('amounts').innerText = `${booksArray.length} items found`
         const booksDiv = document.getElementById('book-container');
+
         booksArray.forEach(element => {
 
-            console.log(element);
             const div = document.createElement('div');
             div.classList.add('col');
             div.innerHTML = `<div class="card h-100 border-0 shadow-lg p-2">
         <div class="rounded-3">
-            <img src="https://covers.openlibrary.org/b/id/${element.cover_i}-M.jpg" class="card-img-top" alt="image not found">
+            <img src="https://covers.openlibrary.org/b/id/${element.cover_i}-M.jpg" class="card-img-top" alt="images/blank.png">
         </div>
         <div class="card-body my-0 pb-2">
-            <h2 class="card-title mb-1 fw-bold">${element.title}</h2>
+            <h3 class="card-title mb-3 fw-bold">${element.title}</h3>
 
-            <h4 class="mb-1">Author: ${element.author_name ? element.author_name : 'unknown'}</h4>
+            <h4 class="mb-2 lead">Author: ${element.author_name ? element.author_name : 'unknown'}</h4>
             
             <p class="mb-1">Published By: ${element.publisher[0] ? element.publisher[0] : 'unknown'}</p>
 
@@ -63,6 +62,8 @@ const showBooks = (data) => {
             booksDiv.appendChild(div);
 
         });
+
     }
+
 
 }

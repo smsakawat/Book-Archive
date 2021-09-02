@@ -11,28 +11,35 @@
       integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
       crossorigin="anonymous"
     />
-    <title>Explore Books</title>
+    <title>Book Archive</title>
+    <!-- Embeddes css -->
     <style>
+      /* common styled */
       @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
       body {
         font-family: "Poppins", sans-serif;
-        background-color: rgb(231, 229, 229);
+        background-color: rgb(238, 237, 237);
       }
+      /* search container style*/
       .search-container {
-        max-width: 85%;
+        max-width: 75%;
         margin: auto;
       }
+      /* card style */
       .card {
         border-radius: 12px;
       }
     </style>
   </head>
   <body>
+    <!-- main starts -->
     <main>
       <!-- search container -->
       <section class="container p-5">
         <div>
-          <div class="input-group mb-3 search-container">
+          <!-- title -->
+          <h2 class="fw-bold text-center mb-4">Search Your Favourte Books:</h2>
+          <div class="input-group mb-1 search-container">
             <input
               id="input-field"
               type="text"
@@ -53,11 +60,14 @@
           <div id="amounts" class="text-center p-2 fs-3"></div>
         </div>
       </section>
-      <hr width="70%" class="mx-auto mt-0" />
-      <!-- error for input-field -->
-      <div id="input-error" class="text-center fw-bold fs-5"></div>
-      <!-- error from server -->
-      <div id="page-error" class="text-center fw-bolder fs-4"></div>
+      <hr width="85%" class="mx-auto mt-0" />
+      <!-- error container -->
+      <section class="error-container">
+        <!-- error for input-field -->
+        <div id="input-error" class="text-center fw-bold fs-5"></div>
+        <!-- error from server -->
+        <div id="page-error" class="text-center fw-bolder fs-4"></div>
+      </section>
       <!-- Books container -->
       <section class="container p-5">
         <!-- Books -->
@@ -73,7 +83,9 @@
           </div>
         </div>
       </section>
+      <!-- main ends -->
     </main>
+
     <!-- bootstrap js -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
