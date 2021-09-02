@@ -1,11 +1,9 @@
-// get search value and call api
-
+// get search value and request server
 document.getElementById('search-btn').addEventListener('click', function () {
-    // change styles by dom
-    document.getElementById('body-part').style.background = '#eee';
+    // change styles
+    document.getElementById('body-part').style.background = '#dcdcdc';
     document.getElementById('title').classList.add('text-dark');
     document.getElementById('horizontal-line').classList.add('text-dark');
-
     // clean UI
     document.getElementById('book-container').innerHTML = '';
     document.getElementById('amounts').innerHTML = '';
@@ -21,6 +19,7 @@ document.getElementById('search-btn').addEventListener('click', function () {
         loadData(searchText);
     }
 })
+
 // load data from server
 const loadData = (searchText) => {
     document.getElementById('spinner').classList.remove('d-none');
@@ -32,6 +31,7 @@ const loadData = (searchText) => {
             document.getElementById('input-field').value = ''
         )
 }
+
 // display books
 const showBooks = (data) => {
     // turn of spinner
@@ -40,15 +40,13 @@ const showBooks = (data) => {
     if (data.numFound === 0) {
         document.getElementById('page-error').innerText = 'NO RESULTS FOUND'
     }
-    // display data
+    // show data
     else {
-        const booksArray = data.docs;
-        document.getElementById('amounts').innerText = `${booksArray.length} items found`
+        const booksDetails = data.docs;
+        document.getElementById('amounts').innerText = `${booksDetails.length} results found`;
         const booksDiv = document.getElementById('book-container');
-
-        booksArray.forEach(element => {
-            console.log(element)
-
+        booksDetails.forEach(element => {
+            // create div and append  in container
             const div = document.createElement('div');
             div.classList.add('col');
             div.innerHTML = `<div class="card h-100 border-0 shadow-lg p-2">

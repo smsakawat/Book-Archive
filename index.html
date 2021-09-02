@@ -12,15 +12,15 @@
       crossorigin="anonymous"
     />
     <title>Book Archive</title>
-    <!-- Embeddes css -->
+    <!-- Embedded css styles -->
     <style>
-      /* common styled */
+      /* common styles */
       @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
       body {
         font-family: "Poppins", sans-serif;
         display: table;
         width: 100%;
-        background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)),
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)),
           url("images/book5.webp") no-repeat;
         background-position: center top;
         height: 100vh;
@@ -45,7 +45,7 @@
         <div>
           <!-- title -->
           <h2 id="title" class="fw-bolder text-center mb-4 text-light">
-            Search Your Favourite Books:
+            Search Books From Book Archive:
           </h2>
           <div class="input-group mb-1 search-container">
             <!-- input  field -->
@@ -67,7 +67,7 @@
             </button>
           </div>
           <!-- total items -->
-          <div id="amounts" class="text-center fs-4"></div>
+          <div id="amounts" class="text-center fs-4 p-1"></div>
         </div>
       </section>
       <hr id="horizontal-line" width="85%" class="mx-auto mt-0 text-light" />
@@ -86,7 +86,7 @@
         <div class="d-flex justify-content-center align-items-center">
           <div
             id="spinner"
-            class="spinner-border text-secondary d-none"
+            class="spinner-border text-dark d-none"
             role="status"
           >
             <span class="visually-hidden">Loading...</span>
