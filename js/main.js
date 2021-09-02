@@ -1,6 +1,11 @@
 // get search value and call api
 
 document.getElementById('search-btn').addEventListener('click', function () {
+    // change styles by dom
+    document.getElementById('body-part').style.background = '#eee';
+    document.getElementById('title').classList.add('text-dark');
+    document.getElementById('horizontal-line').classList.add('text-dark');
+
     // clean UI
     document.getElementById('book-container').innerHTML = '';
     document.getElementById('amounts').innerHTML = '';
@@ -33,7 +38,7 @@ const showBooks = (data) => {
     document.getElementById('spinner').classList.add('d-none');
     // error handle
     if (data.numFound === 0) {
-        document.getElementById('page-error').innerText = 'PAGE NOT FOUND'
+        document.getElementById('page-error').innerText = 'NO RESULTS FOUND'
     }
     // display data
     else {

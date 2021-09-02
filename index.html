@@ -18,7 +18,13 @@
       @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
       body {
         font-family: "Poppins", sans-serif;
-        background-color: rgb(238, 237, 237);
+        display: table;
+        width: 100%;
+        background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)),
+          url("images/book5.webp") no-repeat;
+        background-position: center top;
+        height: 100vh;
+        background-size: cover;
       }
       /* search container style*/
       .search-container {
@@ -31,14 +37,16 @@
       }
     </style>
   </head>
-  <body>
+  <body id="body-part">
     <!-- main starts -->
     <main>
       <!-- search container -->
       <section class="container p-5">
         <div>
           <!-- title -->
-          <h2 class="fw-bold text-center mb-4">Search Your Favourite Books:</h2>
+          <h2 id="title" class="fw-bolder text-center mb-4 text-light">
+            Search Your Favourite Books:
+          </h2>
           <div class="input-group mb-1 search-container">
             <!-- input  field -->
             <input
@@ -62,7 +70,7 @@
           <div id="amounts" class="text-center fs-4"></div>
         </div>
       </section>
-      <hr width="85%" class="mx-auto mt-0" />
+      <hr id="horizontal-line" width="85%" class="mx-auto mt-0 text-light" />
       <!-- error container -->
       <section class="error-container">
         <!-- error for input-field -->
