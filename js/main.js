@@ -54,9 +54,9 @@ const showBooks = (data) => {
 
             <h4 class="mb-2 lead">Author: ${element.author_name ? element.author_name : 'unknown'}</h4>
             
-            <p class="mb-1">Published By: ${element.publisher[0] ? element.publisher[0] : 'unknown'}</p>
+            <p class="mb-1">Published By: ${element.publisher ? element.publisher[0] : 'unknown'}</p>
 
-            <p>First Published: ${element.publish_date[0] ? element.publish_date[0] : element.publish_year}</p>    
+            <p>First Published: ${element.publish_date ? element.publish_date[0] : element.publish_year}</p>    
         </div>
         </div>`;
             booksDiv.appendChild(div);

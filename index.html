@@ -38,8 +38,9 @@
       <section class="container p-5">
         <div>
           <!-- title -->
-          <h2 class="fw-bold text-center mb-4">Search Your Favourte Books:</h2>
+          <h2 class="fw-bold text-center mb-4">Search Your Favourite Books:</h2>
           <div class="input-group mb-1 search-container">
+            <!-- input  field -->
             <input
               id="input-field"
               type="text"
@@ -48,16 +49,17 @@
               aria-label="search  books"
               aria-describedby="button-addon2"
             />
+            <!-- search button -->
             <button
-              class="btn btn-danger text-white ms-1"
+              class="btn btn-primary text-white ms-1"
               type="button"
               id="search-btn"
             >
               Search
             </button>
           </div>
-          <!-- items -->
-          <div id="amounts" class="text-center p-2 fs-3"></div>
+          <!-- total items -->
+          <div id="amounts" class="text-center fs-4"></div>
         </div>
       </section>
       <hr width="85%" class="mx-auto mt-0" />
@@ -72,7 +74,7 @@
       <section class="container p-5">
         <!-- Books -->
         <div id="book-container" class="row row-cols-1 row-cols-md-3 g-4"></div>
-        <!-- spinner -->
+        <!-- add spinner-->
         <div class="d-flex justify-content-center align-items-center">
           <div
             id="spinner"
